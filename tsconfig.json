@@ -1,0 +1,6 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "useDefineForClassFields": false // If you do not set this @property works but @query do not
+  }
+}
