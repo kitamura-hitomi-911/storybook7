@@ -1,0 +1,8 @@
+.vscode
+.cache
+/node_modules/
+/lib/
+/test/
+/storybook-static/
+custom-elements.json
+yarn-error.log
