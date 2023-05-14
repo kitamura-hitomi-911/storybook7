@@ -16,9 +16,12 @@ export const Default: Story = {
   args: {
     label: "Button",
     disabled: false,
+    icon: "add",
   },
   render: (args) =>
-    html`<ss-btn ?disabled=${args.disabled}>${args.label}</ss-btn>`,
+    html`<ss-btn ?disabled=${args.disabled} .icon="${args.icon}"
+      >${args.label}</ss-btn
+    >`,
 };
 
 export const Other: Story = {
