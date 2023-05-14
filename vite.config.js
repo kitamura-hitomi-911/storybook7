@@ -7,8 +7,11 @@ export default defineConfig({
       output: {
         entryFileNames: `assets/[name].js`,
         assetFileNames: `assets/[name].[ext]`,
+        /* globals: {
+          lit: "lit",
+        }, */
       },
-      external: ["lit", "lit/decorators.js"],
+      // external: ["lit", "lit/decorators.js"],
     },
   },
 });
