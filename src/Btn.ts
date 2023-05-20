@@ -12,7 +12,7 @@ export class Btn extends LitElement {
       justify-content: center;
       gap: 4px;
       color: #fff;
-      background-color: #000;
+      background-color: var(--primary);
       &:disabled {
         background-color: #ccc;
       }
@@ -33,7 +33,7 @@ export class Btn extends LitElement {
 
   handleClick(e: Event) {
     console.log(e);
-    this.disabled = true;
+    // this.disabled = true;
   }
 
   // Render the UI as a function of component state

@@ -1,4 +1,4 @@
-/** @type { import('@storybook/web-components-vite').StorybookConfig } */
+import path from "path";
 import { mergeConfig } from "vite";
 import type { StorybookConfig } from "@storybook/web-components-vite";
 const config: StorybookConfig = {
@@ -22,11 +22,15 @@ const config: StorybookConfig = {
     if (configType === "PRODUCTION") {
       // Your production configuration goes here.
     }
-    return mergeConfig(config, {
+    const viteConfig = mergeConfig(config, {
       resolve: {
-        alias: [{ find: "@", replacement: "/src" }],
+        alias: {
+          "@src": path.resolve(__dirname, "../src"),
+        },
       },
     });
+    // console.log(viteConfig);
+    return viteConfig;
   },
 };
 export default config;
