@@ -31,10 +31,19 @@ export class Btn extends LitElement {
   @property({ type: String })
   widthType: "" | "long" = "";
 
+  handleClick(e: Event) {
+    console.log(e);
+    this.disabled = true;
+  }
+
   // Render the UI as a function of component state
   render() {
     return html`
-      <button ?disabled="${this.disabled}">
+      <button
+        role="button"
+        ?disabled="${this.disabled}"
+        @click="${this.handleClick}"
+      >
         ${this.icon
           ? html`<ss-icon sizeType="${this.sizeType}">${this.icon}</ss-icon>`
           : ""}<slot></slot>
