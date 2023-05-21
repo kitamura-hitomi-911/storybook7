@@ -64,7 +64,7 @@
       height: 24px;
       overflow: hidden;
     }
-  `;Y([w({type:String})],O.prototype,"name",2);Y([w({type:String})],O.prototype,"sizeType",2);O=Y([ft("ss-icon")],O);var kt=Object.defineProperty,jt=Object.getOwnPropertyDescriptor,N=(n,t,e,s)=>{for(var i=s>1?void 0:s?jt(t,e):t,o=n.length-1,r;o>=0;o--)(r=n[o])&&(i=(s?r(t,e,i):r(i))||i);return s&&i&&kt(t,e,i),i};console.log("きてますか");let g=class extends E{constructor(){super(...arguments),this.icon="",this.disabled=!1,this.sizeType="",this.widthType=""}handleClick(n){console.log(n)}render(){return K`
+  `;Y([w({type:String})],O.prototype,"name",2);Y([w({type:String})],O.prototype,"sizeType",2);O=Y([ft("ss-icon")],O);var kt=Object.defineProperty,jt=Object.getOwnPropertyDescriptor,N=(n,t,e,s)=>{for(var i=s>1?void 0:s?jt(t,e):t,o=n.length-1,r;o>=0;o--)(r=n[o])&&(i=(s?r(t,e,i):r(i))||i);return s&&i&&kt(t,e,i),i};let g=class extends E{constructor(){super(...arguments),this.icon="",this.disabled=!1,this.sizeType="",this.widthType=""}handleClick(n){console.log(n)}render(){return K`
       <button
         role="button"
         ?disabled="${this.disabled}"
