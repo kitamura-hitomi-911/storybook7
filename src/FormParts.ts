@@ -1,5 +1,6 @@
 import { LitElement, css, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
+import { FormName } from "@/types/form";
 
 @customElement("form-parts")
 export class FormParts extends LitElement {
@@ -25,6 +26,15 @@ export class FormParts extends LitElement {
   titleLabel: string = "";
 
   @property({ type: String })
+  formName: FormName = "form-input";
+
+  @property({ type: Object })
+  formData: any = {
+    value: "",
+    placeholder: "",
+  };
+
+  @property({ type: String })
   placeholder: string = "";
 
   @property({ type: String })
@@ -41,7 +51,17 @@ export class FormParts extends LitElement {
       <dl>
         ${this.titleLabel ? html`<dt>${this.titleLabel}</dt>` : ""}
         <dd>
-          <slot></slot>
+          ${this.formName === "form-input"
+            ? html`<form-input
+                .value="${this.formData.value}"
+                .placeholder="${this.formData.placeholder}"
+              ></form-input>`
+            : this.formName === "form-radio"
+            ? html`<form-radio
+                .value="${this.formData.value}"
+                .options="${this.formData.options || []}"
+              ></form-radio>`
+            : ""}
         </dd>
       </dl>
     `;

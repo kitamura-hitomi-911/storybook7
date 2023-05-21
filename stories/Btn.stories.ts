@@ -5,11 +5,7 @@ import { userEvent, within } from "@storybook/testing-library";
 import { findByShadowRole, findByShadowText } from "shadow-dom-testing-library";
 import { expect } from "@storybook/jest";
 import { html } from "lit";
-
-// Function to emulate pausing between interactions
-function sleep(ms: number) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
+import { sleep } from "./lib";
 
 const meta: Meta = {
   title: "Atoms/Btn",
