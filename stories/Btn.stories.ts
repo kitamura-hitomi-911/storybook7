@@ -13,11 +13,16 @@ function sleep(ms: number) {
 
 const meta: Meta = {
   title: "Atoms/Btn",
-  component: "ss-btn",
+  // component: "ss-btn", // render があるときはいらない気がする
 };
 export default meta;
 
 type Story = StoryObj;
+
+const render: Story["render"] = (args) =>
+  html`<ss-btn ?disabled=${args.disabled} .icon="${args.icon}"
+    >${args.label}</ss-btn
+  >`;
 
 export const Default: Story = {
   args: {
@@ -25,10 +30,7 @@ export const Default: Story = {
     disabled: false,
     icon: "add",
   },
-  render: (args) =>
-    html`<ss-btn ?disabled=${args.disabled} .icon="${args.icon}"
-      >${args.label}</ss-btn
-    >`,
+  render,
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const rootElm = canvas.getByText<HTMLElementTagNameMap["ss-btn"]>("Button");
@@ -49,4 +51,5 @@ export const Other: Story = {
   args: {
     disabled: false,
   },
+  render,
 };
